@@ -1,10 +1,19 @@
 @import "../utils/variables.scss";
+@import "../utils/mixins.scss";
 
 .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    @include centered-items;
+    flex-direction: row-reverse;
     min-height: 16vh;
     background-color: $color1;
+    margin-bottom: 16px;
+
+    .pokeball{
+        height: 104px;
+        width: 104px;
+    }
+
+    &>img{
+        margin: 16px;
+    }
 }

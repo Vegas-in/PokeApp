@@ -11,7 +11,7 @@ const Home = () => {
   console.log(userList);
 
   return( 
-    <section>
+    <section className="home">
       <Card dataPokemon={dataPokemon}/>
       <Search setDataPokemon={setDataPokemon} setUserList={setUserList} userList={userList}/>
       <PokemonList userList={userList}/>

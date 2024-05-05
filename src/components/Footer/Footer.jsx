@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return( 
     <footer className="footer" >
-      <p>ESTE ES MI Footer</p>
+      <p><b>Datos de PokéAPI.co</b></p>
     </footer>
   ); 
 
