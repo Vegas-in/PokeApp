@@ -14,9 +14,9 @@ const PokemonList = (userList) => {
       console.log(data);
       return data.map((item, index) => 
      
-        <article key={index}>
+        <article key={index} className="cardList">
             <div><p>{item.name}</p></div>
-            <div><p>{item.id}</p></div>
+            <div><p>#{item.id}</p></div>
             <div><img src={item.sprites.front_default} alt={item.name} /></div>
         </article>
     );
@@ -27,7 +27,7 @@ const PokemonList = (userList) => {
     
 
   return (
-    <section>
+    <section className="pokemonList">
       {paintItems()}
     </section>
   );

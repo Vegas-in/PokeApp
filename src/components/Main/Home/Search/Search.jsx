@@ -16,11 +16,24 @@ const Search = ({ setDataPokemon, userList, setUserList }) => {
                 if (pokeSerched.length === 0) {
                   console.log("Se ha renderizado el componente y está vacío, no hay datos que pintar");
                 }else{
-                  const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeSerched}`);
-                  const result = resp.data;
-                  setDataPokemon(result);
-                  console.log(resp.data);
-                  setUserList([result, ...userList])
+                    const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeSerched}`);
+                    const result = resp.data;
+                    setDataPokemon(result)
+                   
+                    if (userList.length === 0) {
+                      console.log("La lista de usuario está vacia");
+                      setUserList([result, ...userList]);
+                    }else{
+                      console.log("Estoy en el if del for");
+                      for (let i = 0; i < userList.length; i++) {
+                        if (result.name === userList[i].name) {
+                          console.log("Este pokemon ya está en tu lista");
+                        }else{
+                          setUserList([result, ...userList]);
+                        }
+                    }
+                  }
+                  
                 }
                 
                 
@@ -53,13 +66,13 @@ const Search = ({ setDataPokemon, userList, setUserList }) => {
   };
 
   return (
-    <section className="home">
+    <section className="search">
       <h2>Busca tu Pokemon</h2>
-        <form onSubmit={handleSubmit} className="homeSearch">
-          <input name="search" />
-          <button type="submit" onClick={paintGif}> Buscar </button>
-          {gif == true ? <img src={`${logo}`} alt="pikachuuu" width="100px"/> : <></>}
-        </form>
+      <form onSubmit={handleSubmit} className="homeSearch">
+        <input name="search" placeholder="Nombre o Id"/>
+        <button type="submit" onClick={paintGif}> Buscar </button>
+        {gif == true ? <img src={`${logo}`} alt="pikachuuu" /> : <></>}
+      </form>
     </section>
   );
 };
