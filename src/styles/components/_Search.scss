@@ -1,0 +1,33 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 56px;
+}
+
+.homeSearch{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $color3;
+    padding: 16px;
+    border-radius: 8px;
+    width: 80%;
+    margin: 8px;
+
+    &>input, button, img {
+        margin: 8px;
+        border-radius: 5px;
+    }
+
+    &>img{
+        width: 140px;
+    }
+
+    &>button{
+        background-color: $color5;
+        color: white;
+    }
+}

@@ -1,0 +1,30 @@
+@import "../utils/variables.scss";
+
+.contentCard{
+    display: flex;
+    justify-content: center;
+}
+
+.contPokeSpecs{
+    display: flex;
+    flex-direction: row;
+}
+
+.pokename{
+    color: $color4;
+}
+
+.pokeType{
+    color: $color4;
+    margin-right: 8px;
+}
+
+.pokeSpecs{
+    color: $color1;
+    margin-right: 8px;
+}
+
+.pokeStats{
+    color: $color5;
+    margin-right: 8px;
+}
